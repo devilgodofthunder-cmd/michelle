@@ -10,80 +10,108 @@
 </head>
 <body>
 
-    <!-- NAV SUPERIOR CON MENÚ 3D -->
+    <!-- MENÚ DE NAVEGACIÓN SUPERIOR CON EFECTO 3D -->
     <nav class="navbar">
         <div class="nav-container">
             <ul class="nav-links">
-                <li><a href="#inicio" class="nav-item-3d active">Inicio</a></li>
-                <li><a href="#michelle" class="nav-item-3d">Michelle Calderón</a></li>
-                <li><a href="#modelo" class="nav-item-3d">Modelo</a></li>
-                <li><a href="#musica" class="nav-item-3d">Música</a></li>
-                <li><a href="#activaciones" class="nav-item-3d">Activaciones</a></li>
-                <li><a href="#contacto" class="nav-item-3d">Contacto</a></li>
+                <li><a href="#" onclick="showSection('inicio')" class="nav-item-3d active">Inicio</a></li>
+                <li><a href="#" onclick="showSection('michelle')" class="nav-item-3d">Michelle Calderón</a></li>
+                <li><a href="#" onclick="showSection('modelo')" class="nav-item-3d">Modelo</a></li>
+                <li><a href="#" onclick="showSection('musica')" class="nav-item-3d">Música</a></li>
+                <li><a href="#" onclick="showSection('activaciones')" class="nav-item-3d">Activaciones</a></li>
+                <li><a href="#" onclick="showSection('contacto')" class="nav-item-3d">Contacto</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- REDES SOCIALES FLOTANTES -->
+    <!-- REDES SOCIALES FLOTANTES (DERECHA) -->
     <div class="social-bar">
         <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
         <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
         <a href="https://wa.me/" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
     </div>
 
-    <!-- SECCIÓN 1: INICIO (HERO CON FOTO 3M DE FONDO) -->
-    <section id="inicio" class="hero-section">
-        <div class="hero-content">
-            <span class="logo-monogram">MC</span>
-            <h1 class="brand-title">MICHELLE<br>CALDERÓN</h1>
-            <p class="brand-subtitle">MODELO · MÚSICO · ACTIVACIONES</p>
-        </div>
-    </section>
+    <!-- MAIN CONTAINER (CADA SECCIÓN ES INDEPENDIENTE) -->
+    <main class="page-container">
 
-    <!-- SECCIÓN 2: MICHELLE CALDERÓN -->
-    <section id="michelle" class="content-section">
-        <div class="container">
-            <h2 class="section-headline">MICHELLE CALDERÓN</h2>
-            <p class="section-text">Versatilidad, presencia escénica y arte. Experiencia en pasarelas, imagen corporativa, eventos de marca y proyectos musicales.</p>
-        </div>
-    </section>
-
-    <!-- SECCIÓN 3: MODELO -->
-    <section id="modelo" class="content-section">
-        <div class="container">
-            <h2 class="section-headline">MODELO</h2>
-            <p class="section-text">Campañas publicitarias, editoriales de moda y pasarelas de alta gama.</p>
-        </div>
-    </section>
-
-    <!-- SECCIÓN 4: MÚSICA -->
-    <section id="musica" class="content-section">
-        <div class="container">
-            <h2 class="section-headline">MÚSICA</h2>
-            <p class="section-text">Performance en vivo para eventos privados, festivales y proyectos artísticos.</p>
-        </div>
-    </section>
-
-    <!-- SECCIÓN 5: ACTIVACIONES -->
-    <section id="activaciones" class="content-section">
-        <div class="container">
-            <h2 class="section-headline">ACTIVACIONES</h2>
-            <p class="section-text">Presencia de marca en los mejores eventos deportivos, congresos y exposiciones.</p>
-        </div>
-    </section>
-
-    <!-- SECCIÓN 6: CONTACTO -->
-    <section id="contacto" class="content-section footer-section">
-        <div class="container text-center">
-            <h2 class="section-headline">CONTACTO</h2>
-            <p class="contact-sub">Cotizaciones y contrataciones directas.</p>
-            <div class="contact-actions">
-                <a href="mailto:contacto@ejemplo.com" class="btn-wine">Enviar Correo</a>
-                <a href="https://wa.me/" target="_blank" class="btn-wine whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <!-- 1. INICIO (ÚNICA CON LA FOTO 3M DE FONDO) -->
+        <section id="inicio" class="tab-section active">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="logo-monogram">MC</span>
+                <h1 class="brand-title">MICHELLE<br>CALDERÓN</h1>
+                <p class="brand-subtitle">MODELO · MÚSICO · ACTIVACIONES</p>
             </div>
-            <p class="copyright">© 2026 Michelle Calderón. Todos los derechos reservados.</p>
-        </div>
-    </section>
+        </section>
+
+        <!-- 2. MICHELLE CALDERÓN -->
+        <section id="michelle" class="tab-section">
+            <div class="section-content">
+                <h2 class="section-headline">MICHELLE CALDERÓN</h2>
+                <p class="section-text">Versatilidad, presencia escénica y arte. Experiencia en pasarelas, imagen corporativa, eventos de marca y performance musical.</p>
+            </div>
+        </section>
+
+        <!-- 3. MODELO -->
+        <section id="modelo" class="tab-section">
+            <div class="section-content">
+                <h2 class="section-headline">MODELO</h2>
+                <p class="section-text">Campañas publicitarias, editoriales de moda, fotografía de producto y pasarelas de alta gama.</p>
+            </div>
+        </section>
+
+        <!-- 4. MÚSICA -->
+        <section id="musica" class="tab-section">
+            <div class="section-content">
+                <h2 class="section-headline">MÚSICA</h2>
+                <p class="section-text">Shows musicales en vivo, performance para eventos privados, festivales y cocteles exclusivos.</p>
+            </div>
+        </section>
+
+        <!-- 5. ACTIVACIONES -->
+        <section id="activaciones" class="tab-section">
+            <div class="section-content">
+                <h2 class="section-headline">ACTIVACIONES</h2>
+                <p class="section-text">Presencia de marca en los mejores eventos deportivos, congresos, exposiciones y activaciones especiales.</p>
+            </div>
+        </section>
+
+        <!-- 6. CONTACTO -->
+        <section id="contacto" class="tab-section">
+            <div class="section-content text-center">
+                <h2 class="section-headline">CONTACTO</h2>
+                <p class="contact-sub">Cotizaciones directas para eventos y campañas.</p>
+                <div class="contact-actions">
+                    <a href="mailto:contacto@ejemplo.com" class="btn-wine">Enviar Correo</a>
+                    <a href="https://wa.me/" target="_blank" class="btn-wine whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+                <p class="copyright">© 2026 Michelle Calderón. Todos los derechos reservados.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SCRIPT PARA CAMBIAR DE SECCIÓN DE FORMA LIMPIA -->
+    <script>
+        function showSection(sectionId) {
+            // Ocultar todas las secciones
+            const sections = document.querySelectorAll('.tab-section');
+            sections.forEach(sec => sec.classList.remove('active'));
+
+            // Desactivar todos los botones del menú
+            const navItems = document.querySelectorAll('.nav-item-3d');
+            navItems.forEach(item => item.classList.remove('active'));
+
+            // Mostrar la sección seleccionada
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+
+            // Activar el botón correspondiente
+            event.target.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
