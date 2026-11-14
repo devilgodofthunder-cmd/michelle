@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michelle Calderón | Sitio Oficial</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tipografías editoriales estilizadas -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Iconos de Redes Sociales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
@@ -14,56 +16,83 @@
     <nav class="navbar">
         <div class="nav-container">
             <ul class="nav-links">
-                <li><a href="#" onclick="showSection('inicio')" class="nav-item-3d active">Inicio</a></li>
-                <li><a href="#" onclick="showSection('michelle')" class="nav-item-3d">Michelle Calderón</a></li>
-                <li><a href="#" onclick="showSection('modelo')" class="nav-item-3d">Modelo</a></li>
-                <li><a href="#" onclick="showSection('musica')" class="nav-item-3d">Música</a></li>
-                <li><a href="#" onclick="showSection('activaciones')" class="nav-item-3d">Activaciones</a></li>
-                <li><a href="#" onclick="showSection('contacto')" class="nav-item-3d">Contacto</a></li>
+                <li><a href="#" onclick="showSection('inicio', event)" class="nav-item-3d active">Inicio</a></li>
+                <li><a href="#" onclick="showSection('michelle', event)" class="nav-item-3d">Michelle Calderón</a></li>
+                <li><a href="#" onclick="showSection('modelo', event)" class="nav-item-3d">Modelo</a></li>
+                <li><a href="#" onclick="showSection('musica', event)" class="nav-item-3d">Música</a></li>
+                <li><a href="#" onclick="showSection('activaciones', event)" class="nav-item-3d">Activaciones</a></li>
+                <li><a href="#" onclick="showSection('contacto', event)" class="nav-item-3d">Contacto</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- RED SOCIAL FLOTANTE (INSTAGRAM) -->
+    <!-- BARRA FLOTANTE DE REDES SOCIALES (ORDEN: IG, TIKTOK, TELEGRAM) -->
     <div class="social-bar">
-        <a href="https://www.instagram.com/lanenacaldex_x?xtok=OHFiYmRscHBndHkz" target="_blank" class="social-icon" title="Instagram Oficial">
+        <a href="https://www.instagram.com/lanenacaldex_x?xtok=OHFiYmRscHBndHkz" target="_blank" class="social-icon" title="Instagram">
             <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" target="_blank" class="social-icon" title="TikTok">
+            <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="#" target="_blank" class="social-icon" title="Telegram">
+            <i class="fab fa-telegram-plane"></i>
         </a>
     </div>
 
     <!-- PÁGINAS / SECCIONES PRINCIPALES (SPA) -->
     <main class="page-container">
 
-        <!-- 1. INICIO (PORTADA CON FOTO ANGEL 1.JPG Y MONOGRAMA PNG) -->
+        <!-- 1. INICIO (PORTADA COMPLETA CON PROFESIONAL 6 Y LETRAS BLANCAS ESTILIZADAS) -->
         <section id="inicio" class="tab-section active">
-            <div class="hero-overlay"></div>
+            <div class="hero-photo-wrapper">
+                <img src="Profesional 6.jpg" alt="Michelle Calderón Portada" class="hero-full-photo">
+                <div class="hero-vignette"></div>
+            </div>
             <div class="hero-content">
                 <img src="1000038577.png" alt="Logo MC" class="logo-png">
-                <h1 class="brand-title">MICHELLE<br>CALDERÓN</h1>
-                <p class="brand-subtitle">MODELO · MÚSICO · ACTIVACIONES</p>
+                <h1 class="brand-title">Michelle<br>Calderón</h1>
+                <p class="brand-subtitle">MODELO · MISS AMÉRICA INTERNACIONAL RM 2025 · DJ</p>
             </div>
         </section>
 
-        <!-- 2. MICHELLE CALDERÓN (BIO / TRAYECTORIA) -->
+        <!-- 2. MICHELLE CALDERÓN (PRIMERO FOTOS, DESPUÉS TEXTO BIOGRÁFICO) -->
         <section id="michelle" class="tab-section">
-            <div class="section-content text-center">
-                <h2 class="section-headline">MICHELLE CALDERÓN</h2>
-                <p class="section-text">Versatilidad, presencia escénica y arte. Experiencia en pasarelas de alta costura, imagen corporativa para marcas premium y performance musical.</p>
+            <div class="section-content bio-layout">
                 
+                <!-- PRIMERO: GALERÍA DE FOTOS -->
                 <div class="bio-grid">
                     <div class="bio-card">
-                        <img src="Professional 4.jpg" alt="Perfil Editorial Michelle Calderón">
-                        <h3>Perfil Editorial</h3>
+                        <img src="Professional 4.jpg" alt="Michelle Calderón Editorial 1">
                     </div>
                     <div class="bio-card">
-                        <img src="Professional 3.jpg" alt="Power Dressing Style">
-                        <h3>Imagen & Estilo</h3>
+                        <img src="Professional 3.jpg" alt="Michelle Calderón Editorial 2">
                     </div>
                 </div>
+
+                <!-- DESPUÉS: TEXTO COMPLETO -->
+                <div class="bio-text-container">
+                    <h2 class="bio-main-title">Michelle Calderón</h2>
+                    <p class="bio-tagline">Modelo · Miss América Internacional RM 2025 · DJ · Artista profesional del entretenimiento</p>
+                    
+                    <div class="bio-paragraphs">
+                        <p>Michelle Calderón es una figura mexicana que fusiona belleza, moda, música y entretenimiento en una presencia escénica sofisticada y contemporánea.</p>
+                        
+                        <p>Su trayectoria como modelo profesional la ha llevado a participar en pasarelas, editoriales, campañas publicitarias y producciones audiovisuales, construyendo una imagen versátil que transita entre la moda, el lujo y la comunicación visual.</p>
+                        
+                        <p>En 2025, su carrera alcanzó un nuevo capítulo al ser coronada <strong>Miss América Internacional RM 2025</strong>, reconocimiento que representa su disciplina, preparación y capacidad para proyectar una imagen de liderazgo, elegancia y seguridad.</p>
+                        
+                        <p>Como DJ, Michelle encuentra en la música otra forma de expresión. Su estilo combina energía, personalidad y sensualidad para crear experiencias que conectan con diferentes públicos y escenarios.</p>
+                        
+                        <p>Su experiencia en eventos, activaciones de marca y espectáculos de gran formato complementa su perfil artístico. Como edecán y animadora, ha participado en producciones deportivas, automovilismo, lanzamientos, eventos corporativos y entretenimiento, aportando interacción, presencia y una imagen capaz de convertirse en parte de la experiencia de marca.</p>
+                        
+                        <p class="bio-closing">Michelle Calderón representa una nueva generación de talento: una mujer que convierte su imagen, su voz y su presencia en una forma de expresión.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- 3. MODELO (GALERÍA 3D LIMPIA SOBRE FONDO NEGRO) -->
+        <!-- 3. MODELO (GALERÍA 3D SOBRE FONDO NEGRO) -->
         <section id="modelo" class="tab-section">
             <div class="section-content full-width text-center">
                 <h2 class="section-headline">PORTAFOLIO MODELO</h2>
@@ -95,7 +124,7 @@
         <!-- 4. MÚSICA -->
         <section id="musica" class="tab-section">
             <div class="section-content text-center">
-                <h2 class="section-headline">MÚSICA & PERFORMANCE</h2>
+                <h2 class="section-headline">MÚSICA & DJ SET</h2>
                 <p class="section-text">Presentaciones en vivo, shows conceptuales para eventos privados, festivales y cocteles de alta gama.</p>
                 <div class="single-feature">
                     <img src="Benner rojo 1.jpg" alt="Performance Musical" class="feature-img">
@@ -157,7 +186,9 @@
 
     <!-- SCRIPT CAMBIO DE SECCIÓN NAVEGACIÓN -->
     <script>
-        function showSection(sectionId) {
+        function showSection(sectionId, e) {
+            if (e) e.preventDefault();
+
             const sections = document.querySelectorAll('.tab-section');
             sections.forEach(sec => sec.classList.remove('active'));
 
@@ -167,79 +198,14 @@
             const targetSection = document.getElementById(sectionId);
             if (targetSection) {
                 targetSection.classList.add('active');
+                targetSection.scrollTop = 0; // Reinicia el scroll al cambiar de pestaña
             }
 
-            if (event && event.target) {
-                event.target.classList.add('active');
+            if (e && e.currentTarget) {
+                e.currentTarget.classList.add('active');
             }
         }
     </script>
 
 </body>
 </html>
-                                                  <li><a href="#" onclick="showSection('musica')" class="nav-item-3d">Música</a></li>
-                                                                                                                                    <li><a href="#" onclick="showSection('activaciones')" class="nav-item-3d">Activaciones</a></li>
-                                                                                                                                                    <li><a href="#" onclick="showSection('contacto')" class="nav-item-3d">Contacto</a></li>
-                                                                                                                                                                </ul>
-                                                                                                                                                                        </div>
-                                                                                                                                                                            </nav>
-                                                                                                                                                                            
-                                                                                                                                                                                <!-- REDES SOCIALES FLOTANTES (DERECHA) -->
-                                                                                                                                                                                    <div class="social-bar">
-                                                                                                                                                                                            <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                                                                                                                                                                                                    <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                                                                                                                                                                                                            <a href="https://wa.me/" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                
-                                                                                                                                                                                                                    <!-- MAIN CONTAINER (CADA SECCIÓN ES INDEPENDIENTE) -->
-                                                                                                                                                                                                                        <main class="page-container">
-                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                <!-- 1. INICIO (ÚNICA CON LA FOTO 3M DE FONDO) -->
-                                                                                                                                                                                                                                        <section id="inicio" class="tab-section active">
-                                                                                                                                                                                                                                                    <div class="hero-overlay"></div>
-                                                                                                                                                                                                                                                                <div class="hero-content">
-                                                                                                                                                                                                                                                                                <span class="logo-monogram">MC</span>
-                                                                                                                                                                                                                                                                                                <h1 class="brand-title">MICHELLE<br>CALDERÓN</h1>
-                                                                                                                                                                                                                                                                                                                <p class="brand-subtitle">MODELO · MÚSICO · ACTIVACIONES</p>
-                                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                                                    </section>
-                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                            <!-- 2. MICHELLE CALDERÓN -->
-                                                                                                                                                                                                                                                                                                                                                    <section id="michelle" class="tab-section">
-                                                                                                                                                                                                                                                                                                                                                                <div class="section-content">
-                                                                                                                                                                                                                                                                                                                                                                                <h2 class="section-headline">MICHELLE CALDERÓN</h2>
-                                                                                                                                                                                                                                                                                                                                                                                                <p class="section-text">Versatilidad, presencia escénica y arte. Experiencia en pasarelas, imagen corporativa, eventos de marca y performance musical.</p>
-                                                                                                                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                    </section>
-                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                            <!-- 3. MODELO -->
-                                                                                                                                                                                                                                                                                                                                                                                                                                    <section id="modelo" class="tab-section">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="section-content">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                <h2 class="section-headline">MODELO</h2>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <p class="section-text">Campañas publicitarias, editoriales de moda, fotografía de producto y pasarelas de alta gama.</p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </section>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <!-- 4. MÚSICA -->
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <section id="musica" class="tab-section">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="section-content">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <h2 class="section-headline">MÚSICA</h2>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <p class="section-text">Shows musicales en vivo, performance para eventos privados, festivales y cocteles exclusivos.</p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </section>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <!-- 5. ACTIVACIONES -->
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <section id="activaciones" class="tab-section">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="section-content">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <h2 class="section-headline">ACTIVACIONES</h2>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <p class="section-text">Presencia de marca en los mejores eventos deportivos, congresos, exposiciones y activaciones especiales.</p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </section>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <!-- 6. CONTACTO -->
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <section id="contacto" class="tab-section">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="section-content text-center">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <h2 class="section-headline">CONTACTO</h2>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <p class="contact-sub">Cotizaciones directas para eventos y campañas.</p>
-
->
