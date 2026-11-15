@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michelle Calderón | Sitio Oficial</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Tipografías editoriales estilizadas -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Iconos de Redes Sociales -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -26,7 +24,7 @@
         </div>
     </nav>
 
-    <!-- BARRA FLOTANTE DE REDES SOCIALES (ORDEN: IG, TIKTOK, TELEGRAM) -->
+    <!-- BARRA FLOTANTE DE REDES SOCIALES (IG, TIKTOK, TELEGRAM) -->
     <div class="social-bar">
         <a href="https://www.instagram.com/lanenacaldex_x?xtok=OHFiYmRscHBndHkz" target="_blank" class="social-icon" title="Instagram">
             <i class="fab fa-instagram"></i>
@@ -42,34 +40,31 @@
     <!-- PÁGINAS / SECCIONES PRINCIPALES (SPA) -->
     <main class="page-container">
 
-        <!-- 1. INICIO (PORTADA COMPLETA CON PROFESIONAL 6 Y LETRAS BLANCAS ESTILIZADAS) -->
+        <!-- 1. INICIO (SIN SIGLAS MC, FOTO COMPLETA PROFESIONAL 6 .JPG) -->
         <section id="inicio" class="tab-section active">
             <div class="hero-photo-wrapper">
-                <img src="Profesional 6.jpg" alt="Michelle Calderón Portada" class="hero-full-photo">
+                <img src="Profesional 6 .jpg" alt="Michelle Calderón Portada" class="hero-full-photo">
                 <div class="hero-vignette"></div>
             </div>
             <div class="hero-content">
-                <img src="1000038577.png" alt="Logo MC" class="logo-png">
                 <h1 class="brand-title">Michelle<br>Calderón</h1>
                 <p class="brand-subtitle">MODELO · MISS AMÉRICA INTERNACIONAL RM 2025 · DJ</p>
             </div>
         </section>
 
-        <!-- 2. MICHELLE CALDERÓN (PRIMERO FOTOS, DESPUÉS TEXTO BIOGRÁFICO) -->
+        <!-- 2. MICHELLE CALDERÓN (FOTOS ARRIBA, TEXTO COMPLETO ABAJO) -->
         <section id="michelle" class="tab-section">
             <div class="section-content bio-layout">
                 
-                <!-- PRIMERO: GALERÍA DE FOTOS -->
                 <div class="bio-grid">
                     <div class="bio-card">
-                        <img src="Professional 4.jpg" alt="Michelle Calderón Editorial 1">
+                        <img src="Profesional 4.jpg" alt="Michelle Calderón Editorial 1">
                     </div>
                     <div class="bio-card">
-                        <img src="Professional 3.jpg" alt="Michelle Calderón Editorial 2">
+                        <img src="Profesional 3.jpg" alt="Michelle Calderón Editorial 2">
                     </div>
                 </div>
 
-                <!-- DESPUÉS: TEXTO COMPLETO -->
                 <div class="bio-text-container">
                     <h2 class="bio-main-title">Michelle Calderón</h2>
                     <p class="bio-tagline">Modelo · Miss América Internacional RM 2025 · DJ · Artista profesional del entretenimiento</p>
@@ -92,29 +87,29 @@
             </div>
         </section>
 
-        <!-- 3. MODELO (GALERÍA 3D SOBRE FONDO NEGRO) -->
+        <!-- 3. MODELO (GALERÍA 3D CON NOMBRES EXACTOS DE REPOSITORIO) -->
         <section id="modelo" class="tab-section">
             <div class="section-content full-width text-center">
                 <h2 class="section-headline">PORTAFOLIO MODELO</h2>
                 <div class="editorial-gallery-3d">
                     <div class="gallery-card-3d">
                         <div class="card-inner">
-                            <img src="Deluxe roja.jpg" alt="Editorial Studio Red">
+                            <img src="Deluxe roja .jpg" alt="Editorial Studio Red">
                         </div>
                     </div>
                     <div class="gallery-card-3d">
                         <div class="card-inner">
-                            <img src="Roja post 1 profesional.jpg" alt="Editorial Puerta">
+                            <img src="Roja post 1 profesional .jpg" alt="Editorial Puerta">
                         </div>
                     </div>
                     <div class="gallery-card-3d">
                         <div class="card-inner">
-                            <img src="Professional 2.jpg" alt="Editorial Blue Dress">
+                            <img src="Profesional 2.jpg" alt="Editorial Blue Dress">
                         </div>
                     </div>
                     <div class="gallery-card-3d">
                         <div class="card-inner">
-                            <img src="Santa roja.jpg" alt="Fashion Show Santa">
+                            <img src="Seria roja .jpg" alt="Editorial Seria Roja">
                         </div>
                     </div>
                 </div>
@@ -127,7 +122,7 @@
                 <h2 class="section-headline">MÚSICA & DJ SET</h2>
                 <p class="section-text">Presentaciones en vivo, shows conceptuales para eventos privados, festivales y cocteles de alta gama.</p>
                 <div class="single-feature">
-                    <img src="Benner rojo 1.jpg" alt="Performance Musical" class="feature-img">
+                    <img src="Banner rojo 1.jpg" alt="Performance Musical" class="feature-img">
                 </div>
             </div>
         </section>
@@ -143,14 +138,14 @@
                         <h3>Eventos Especiales</h3>
                     </div>
                     <div class="bio-card">
-                        <img src="Professional.jpg" alt="Imagen Publicitaria Zebra Print">
+                        <img src="Profesional .jpg" alt="Imagen Publicitaria Zebra Print">
                         <h3>Embajadora de Marca</h3>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. CONTACTO (FORMULARIO Y WHATSAPP DIRECTO) -->
+        <!-- 6. CONTACTO -->
         <section id="contacto" class="tab-section">
             <div class="section-content form-wrapper text-center">
                 <h2 class="section-headline">CONTACTO</h2>
@@ -198,7 +193,7 @@
             const targetSection = document.getElementById(sectionId);
             if (targetSection) {
                 targetSection.classList.add('active');
-                targetSection.scrollTop = 0; // Reinicia el scroll al cambiar de pestaña
+                targetSection.scrollTop = 0;
             }
 
             if (e && e.currentTarget) {

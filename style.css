@@ -135,7 +135,7 @@ body {
 
 .hero-photo-wrapper {
     position: absolute;
-    top: 60px; /* Respeta la altura del menú superior para no cortar la cabeza */
+    top: 60px;
     left: 0;
     width: 100%;
     height: calc(100vh - 60px);
@@ -148,15 +148,15 @@ body {
 .hero-full-photo {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Garantiza que se vea TODA la foto sin cortar cabeza ni pies */
+    object-fit: contain;
     object-position: center top;
 }
 
 .hero-vignette {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(5, 5, 5, 0.15) 35%, rgba(5, 5, 5, 0.85) 95%),
-                linear-gradient(to top, rgba(5, 5, 5, 0.9) 0%, rgba(5, 5, 5, 0.25) 45%, rgba(5, 5, 5, 0.1) 100%);
+    background: radial-gradient(circle at center, rgba(5, 5, 5, 0.1) 35%, rgba(5, 5, 5, 0.85) 95%),
+                linear-gradient(to top, rgba(5, 5, 5, 0.92) 0%, rgba(5, 5, 5, 0.3) 45%, rgba(5, 5, 5, 0.05) 100%);
     pointer-events: none;
 }
 
@@ -165,23 +165,14 @@ body {
     z-index: 2;
     text-align: center;
     padding: 0 20px;
-    margin-top: 12vh;
-}
-
-.logo-png {
-    max-width: 190px;
-    height: auto;
-    display: block;
-    margin: 0 auto 5px auto;
-    opacity: 0.85;
-    filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.9));
+    margin-top: 28vh;
 }
 
 .brand-title {
     font-family: 'Cinzel', 'Cormorant Garamond', serif;
     font-size: 4.6rem;
     font-weight: 400;
-    color: #ffffff; /* Letras en blanco puro */
+    color: #ffffff;
     letter-spacing: 8px;
     line-height: 1.08;
     text-transform: uppercase;
@@ -229,7 +220,7 @@ body {
     width: 100%;
     height: 420px;
     object-fit: cover;
-    object-position: top center; /* Evita cortar rostros */
+    object-position: top center;
     display: block;
 }
 
@@ -470,10 +461,6 @@ body {
         font-size: 0.65rem;
     }
 
-    .logo-png {
-        max-width: 140px;
-    }
-
     .brand-title {
         font-size: 2.5rem;
         letter-spacing: 4px;
@@ -497,4 +484,4 @@ body {
         gap: 16px;
     }
 }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
