@@ -1,4 +1,4 @@
-/* RESET GENERAL */
+/* GENERAL RESET */
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +15,7 @@ body {
     width: 100vw;
 }
 
-/* NAVEGACIÓN FIJA EN CABECERA */
+/* FIXED TOP NAVIGATION */
 .navbar {
     position: fixed;
     top: 0;
@@ -41,7 +41,7 @@ body {
     perspective: 600px;
 }
 
-/* MENÚ CON EFECTO 3D EN COLOR VINO */
+/* 3D WINE MENU ITEMS */
 .nav-item-3d {
     display: inline-block;
     color: #ffffff;
@@ -66,7 +66,7 @@ body {
         0px 4px 12px rgba(128, 0, 32, 0.8);
 }
 
-/* RED SOCIAL FLOTANTE (IG, TIKTOK, TELEGRAM) */
+/* FLOATING SOCIAL BAR (IG, TIKTOK, TELEGRAM) */
 .social-bar {
     position: fixed;
     right: 25px;
@@ -91,7 +91,7 @@ body {
     transform: scale(1.25);
 }
 
-/* ESTRUCTURA PESTAÑAS (SPA) */
+/* SPA TAB SECTIONS */
 .page-container {
     width: 100vw;
     height: 100vh;
@@ -123,7 +123,7 @@ body {
 }
 
 /* =========================================================
-   1. SECCIÓN INICIO: PROFESIONAL 6 COMPLETA + LETRAS BLANCAS
+   1. HOME SECTION: FULL PROFESIONAL 6 + WHITE STYLIZED TEXT
    ========================================================= */
 #inicio {
     align-items: center;
@@ -189,7 +189,7 @@ body {
 }
 
 /* =========================================================
-   2. SECCIÓN MICHELLE CALDERÓN (FOTOS ARRIBA, TEXTO ABAJO)
+   2. MICHELLE CALDERÖN SECTION (PHOTOS TOP, BIO BELOW)
    ========================================================= */
 .bio-layout {
     max-width: 950px;
@@ -281,7 +281,7 @@ body {
 }
 
 /* =========================================================
-   CONTENIDOS GENERALES Y GALERÍA 3D
+   GENERAL CONTENT & 3D GALLERY
    ========================================================= */
 .section-content {
     max-width: 950px;
@@ -314,7 +314,7 @@ body {
     margin-bottom: 30px;
 }
 
-/* GALERÍA 3D INTERACTIVA EN SECCIÓN MODELO */
+/* 3D INTERACTIVE GALLERY IN MODEL SECTION */
 .editorial-gallery-3d {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -359,7 +359,7 @@ body {
     filter: brightness(1.1);
 }
 
-/* IMAGEN DE MÚSICA */
+/* MUSIC IMAGE */
 .single-feature {
     max-width: 650px;
     margin: 0 auto;
@@ -372,7 +372,7 @@ body {
     border: 1px solid #222;
 }
 
-/* FORMULARIO DE CONTACTO Y BOTÓN WHATSAPP */
+/* CONTACT FORM & WHATSAPP BUTTON */
 .form-wrapper {
     max-width: 550px;
 }
@@ -450,7 +450,7 @@ body {
     margin-top: 30px;
 }
 
-/* RESPONSIVO MÓVIL */
+/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
     .nav-links {
         gap: 10px;
@@ -484,4 +484,4 @@ body {
         gap: 16px;
     }
 }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
