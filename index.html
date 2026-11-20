@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michelle Calderön | Official Website</title>
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -53,7 +53,7 @@
         <!-- 1. HOME -->
         <section id="inicio" class="tab-section active">
             <div class="hero-photo-wrapper">
-                <img src="Profesional 6 .jpg" alt="Michelle Calderön Cover" class="hero-full-photo">
+                <img src="Profesional 2.jpg" alt="Michelle Calderön Cover" class="hero-full-photo">
                 <div class="hero-vignette"></div>
             </div>
             <div class="hero-content">
@@ -97,14 +97,14 @@
             </div>
         </section>
 
-        <!-- 3. MODEL -->
+        <!-- 3. MODEL (AUTO-CYCLING 3D MEASUREMENTS EVERY 4s + 3D PORTFOLIO) -->
         <section id="modelo" class="tab-section">
             <div class="section-content full-width text-center">
                 <h2 class="section-headline">MODEL PORTFOLIO</h2>
 
-                <!-- INTERACTIVE 3D MEASUREMENTS -->
-                <div class="measurements-3d-grid">
-                    <div class="measure-card-3d">
+                <!-- INTERACTIVE & AUTO-ROTATING 3D MEASUREMENTS -->
+                <div class="measurements-3d-grid" id="measurements-grid">
+                    <div class="measure-card-3d active-3d">
                         <span class="measure-label">BUST</span>
                         <span class="measure-value">98 <small>cm</small></span>
                     </div>
@@ -148,7 +148,7 @@
             </div>
         </section>
 
-        <!-- 4. MUSIC (UNIFIED FRAME AROUND VIDEOCLIP + TRACK CONTROLS + FULL DJ LOGO) -->
+        <!-- 4. MUSIC -->
         <section id="musica" class="tab-section">
             <div class="section-content text-center">
                 <h2 class="section-headline">MUSIC & DJ SET</h2>
@@ -190,6 +190,8 @@
                         <img src="Banner rojo 1.jpg" alt="Musical Performance">
                     </div>
                 </div>
+            </div>
+        </section>
 
         <!-- 5. ACTIVATIONS -->
         <section id="activaciones" class="tab-section">
@@ -209,26 +211,31 @@
             </div>
         </section>
 
-        <!-- 6. CONTACT -->
+        <!-- 6. CONTACT (DIRECT EMAIL TO contacto@pointgridmx.com & WHATSAPP) -->
         <section id="contacto" class="tab-section">
             <div class="section-content form-wrapper text-center">
                 <h2 class="section-headline">CONTACT</h2>
                 <p class="contact-sub">Send us your booking inquiry for campaigns, runways, DJ sets, or special events.</p>
                 
-                <form action="https://formspree.io/f/contacto@pointgridmx.com" method="POST" class="contact-form">
+                <form id="booking-form" action="https://formsubmit.co/contacto@pointgridmx.com" method="POST" class="contact-form">
+                    <input type="hidden" name="_subject" value="New Booking Inquiry - Michelle Calderön Website">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Full Name" required>
+                        <input type="text" name="Full_Name" placeholder="Full Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" name="phone" placeholder="Contact Number" required>
+                        <input type="tel" name="Contact_Number" placeholder="Contact Number" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Email Address" required>
+                        <input type="email" name="Email_Address" placeholder="Email Address" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" rows="4" placeholder="How can we help you?" required></textarea>
+                        <textarea name="Message" rows="4" placeholder="How can we help you?" required></textarea>
                     </div>
-                    <button type="submit" class="btn-wine btn-submit">Send Inquiry</button>
+                    <button type="submit" id="submit-btn" class="btn-wine btn-submit">Send Inquiry</button>
+                    <p id="form-feedback" class="form-feedback"></p>
                 </form>
 
                 <div class="whatsapp-direct-wrapper">
@@ -248,8 +255,46 @@
 
     </main>
 
-    <!-- NAVIGATION & DJ 30s RANDOM AUDIO SCRIPT -->
+    <!-- NAVIGATION, 4-SECOND 3D MEASUREMENTS, DJ AUDIO & FORM SCRIPT -->
     <script>
+        /* 1. AUTO-CYCLING 3D MEASUREMENTS EVERY 4 SECONDS */
+        const measureCards = document.querySelectorAll('.measure-card-3d');
+        let currentMeasureIndex = 0;
+        let measureInterval = null;
+
+        function highlightNextMeasure() {
+            if (!measureCards.length) return;
+            measureCards.forEach(card => card.classList.remove('active-3d'));
+            measureCards[currentMeasureIndex].classList.add('active-3d');
+            currentMeasureIndex = (currentMeasureIndex + 1) % measureCards.length;
+        }
+
+        function startMeasureCycle() {
+            clearInterval(measureInterval);
+            currentMeasureIndex = 0;
+            highlightNextMeasure();
+            measureInterval = setInterval(highlightNextMeasure, 4000);
+        }
+
+        function stopMeasureCycle() {
+            clearInterval(measureInterval);
+        }
+
+        measureCards.forEach((card, idx) => {
+            card.addEventListener('mouseenter', () => {
+                clearInterval(measureInterval);
+                measureCards.forEach(c => c.classList.remove('active-3d'));
+                card.classList.add('active-3d');
+                currentMeasureIndex = (idx + 1) % measureCards.length;
+            });
+            card.addEventListener('mouseleave', () => {
+                if (document.getElementById('modelo').classList.contains('active')) {
+                    measureInterval = setInterval(highlightNextMeasure, 4000);
+                }
+            });
+        });
+
+        /* 2. DJ 30-SECOND RANDOM TRACK PLAYER */
         const tracks = [
             { el: document.getElementById('dj-audio-1'), name: 'Track 01 · DJ Mix' },
             { el: document.getElementById('dj-audio-2'), name: 'Track 02 · DJ Mix' }
@@ -343,6 +388,7 @@
             playRandom30sSnippet(nextIndex);
         }
 
+        /* 3. SECTION NAVIGATION SWITCHER */
         function showSection(sectionId, e) {
             if (e) e.preventDefault();
 
@@ -362,6 +408,14 @@
                 e.currentTarget.classList.add('active');
             }
 
+            // Start or stop 4-second 3D measurement rotation
+            if (sectionId === 'modelo') {
+                startMeasureCycle();
+            } else {
+                stopMeasureCycle();
+            }
+
+            // Start or stop Music video and 30s audio
             const bgVideo = document.getElementById('dj-bg-video');
             if (sectionId === 'musica') {
                 isMusicTabActive = true;
@@ -378,6 +432,43 @@
                     bgVideo.pause();
                 }
             }
+        }
+
+        /* 4. AJAX FORM SUBMISSION TO contacto@pointgridmx.com */
+        const bookingForm = document.getElementById('booking-form');
+        if (bookingForm) {
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const submitBtn = document.getElementById('submit-btn');
+                const feedback = document.getElementById('form-feedback');
+                const originalText = submitBtn.textContent;
+
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                feedback.textContent = '';
+
+                const formData = new FormData(bookingForm);
+
+                fetch('https://formsubmit.co/ajax/contacto@pointgridmx.com', {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    feedback.style.color = '#25d366';
+                    feedback.textContent = 'Thank you! Your inquiry has been sent to Michelle Calderön’s management team.';
+                    bookingForm.reset();
+                })
+                .catch(error => {
+                    // Fallback to standard form submit if AJAX is blocked
+                    bookingForm.submit();
+                })
+                .finally(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+            });
         }
     </script>
 
