@@ -91,28 +91,51 @@ body {
     transform: scale(1.25);
 }
 
-/* GLOBAL SUBTLE AGENCY SIGNATURE (OPTION 2) */
+/* GLOBAL AGENCY SIGNATURE WITH 3D WINE HOVER */
 .global-agency-badge {
     position: fixed;
-    bottom: 12px;
-    left: 20px;
+    bottom: 16px;
+    left: 24px;
     z-index: 998;
-    font-size: 0.68rem;
-    letter-spacing: 1.8px;
+    perspective: 600px;
+}
+
+.pointgrid-3d-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    letter-spacing: 2.2px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.35);
-    pointer-events: auto;
-}
-
-.global-agency-badge a {
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.65);
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-weight: 400;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background: rgba(5, 5, 5, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transform-style: preserve-3d;
+    transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.global-agency-badge a:hover {
-    color: #800020;
+.pointgrid-3d-link span {
+    font-weight: 600;
+    color: #ffffff;
+    transition: color 0.35s ease;
+}
+
+.pointgrid-3d-link:hover {
+    color: #ff4d79;
+    border-color: #800020;
+    background: rgba(30, 3, 10, 0.9);
+    transform: translateZ(30px) translateY(-4px) scale(1.1);
+    text-shadow: 
+        1px 1px 0px #4d0013,
+        2px 2px 0px #33000d,
+        0px 4px 14px rgba(179, 36, 72, 0.9);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.85), 0 0 16px rgba(128, 0, 32, 0.65);
+}
+
+.pointgrid-3d-link:hover span {
+    color: #b32448;
 }
 
 /* SPA TAB SECTIONS */
@@ -449,36 +472,73 @@ body {
 }
 
 /* =========================================================
-   4. MUSIC & DJ AUDIO CONTROLLER
+   4. MUSIC, VIDEOCLIP BACKGROUND & UNCROPPED DJ PHOTOS
    ========================================================= */
 .dj-player-box {
-    max-width: 540px;
-    margin: 0 auto 35px auto;
-    padding: 18px 24px;
-    background: linear-gradient(145deg, #110508, #0a0a0a);
-    border: 1px solid rgba(128, 0, 32, 0.55);
+    position: relative;
+    width: 100%;
+    max-width: 820px;
+    min-height: 240px;
+    margin: 0 auto 38px auto;
+    padding: 35px 24px;
+    background: #0a0a0a;
+    border: 1px solid rgba(128, 0, 32, 0.65);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.85), 0 0 20px rgba(128, 0, 32, 0.25);
+}
+
+.dj-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.72;
+}
+
+.dj-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(5, 5, 5, 0.45) 0%, rgba(5, 5, 5, 0.85) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.dj-player-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
 }
 
 .dj-status {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 0.82rem;
-    letter-spacing: 1.5px;
+    font-size: 0.88rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    color: #e0e0e0;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+    background: rgba(5, 5, 5, 0.65);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .equalizer-dot {
     width: 9px;
     height: 9px;
     border-radius: 50%;
-    background-color: #555555;
+    background-color: #777777;
     display: inline-block;
 }
 
@@ -495,18 +555,18 @@ body {
 
 .dj-controls {
     display: flex;
-    gap: 12px;
+    gap: 14px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .btn-dj-control {
-    padding: 10px 22px;
-    background: #800020;
+    padding: 12px 24px;
+    background: rgba(128, 0, 32, 0.92);
     border: 1px solid #b32448;
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     cursor: pointer;
@@ -518,16 +578,16 @@ body {
 
 .btn-dj-control:hover {
     background: #a30029;
-    box-shadow: 0 0 15px rgba(179, 36, 72, 0.6);
+    box-shadow: 0 0 18px rgba(179, 36, 72, 0.7);
 }
 
 .btn-dj-secondary {
-    padding: 10px 18px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: #cccccc;
+    padding: 12px 20px;
+    background: rgba(5, 5, 5, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
     font-family: 'Poppins', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     cursor: pointer;
@@ -539,21 +599,24 @@ body {
 
 .btn-dj-secondary:hover {
     border-color: #800020;
-    color: #ffffff;
+    background: rgba(128, 0, 32, 0.35);
 }
 
 .music-gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
-    max-width: 900px;
+    max-width: 820px;
     margin: 0 auto;
 }
 
 .music-feature-card {
-    background: #0d0d0d;
+    background: #080808;
     border: 1px solid #1f1f1f;
-    padding: 12px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
@@ -565,13 +628,13 @@ body {
 .music-feature-card img {
     width: 100%;
     height: 360px;
-    object-fit: cover;
-    object-position: top center;
+    object-fit: contain; /* Muestra toda la foto y el logo DJ completos sin recortes */
+    background-color: #050505;
     display: block;
 }
 
 /* =========================================================
-   6. CONTACT FORM, WHATSAPP & AGENCY CREDITS (OPTION 1)
+   6. CONTACT FORM, WHATSAPP & AGENCY CREDITS
    ========================================================= */
 .form-wrapper {
     max-width: 550px;
@@ -658,7 +721,7 @@ body {
 
 .agency-credit {
     color: #666666;
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     letter-spacing: 1.5px;
     text-transform: uppercase;
 }
@@ -695,17 +758,16 @@ body {
 
     .tab-section {
         padding-top: 85px;
-        padding-bottom: 85px;
+        padding-bottom: 95px;
     }
 
-    /* Hero framing for vertical phone screens */
     #inicio {
         padding-top: 75px;
     }
 
     .hero-photo-wrapper {
         top: 75px;
-        height: calc(100vh - 135px);
+        height: calc(100vh - 145px);
     }
 
     .hero-full-photo {
@@ -727,19 +789,28 @@ body {
         letter-spacing: 2px;
     }
 
-    /* Better photo aspect ratios on smartphones */
     .bio-grid,
     .music-gallery-grid {
         grid-template-columns: 1fr;
         gap: 18px;
     }
 
-    .bio-card img,
-    .music-feature-card img {
+    .bio-card img {
         height: auto;
         aspect-ratio: 3 / 4;
         object-fit: cover;
         object-position: top center;
+    }
+
+    .music-feature-card img {
+        height: auto;
+        max-height: 360px;
+        object-fit: contain;
+    }
+
+    .dj-player-box {
+        min-height: 200px;
+        padding: 24px 16px;
     }
 
     .measurements-3d-grid {
@@ -773,7 +844,6 @@ body {
         font-size: 1.9rem;
     }
 
-    /* Bottom horizontal social bar so it never overlaps photos on phones */
     .social-bar {
         right: auto;
         left: 50%;
@@ -793,10 +863,14 @@ body {
     }
 
     .global-agency-badge {
-        bottom: 52px;
+        bottom: 54px;
         left: 50%;
         transform: translateX(-50%);
         white-space: nowrap;
-        font-size: 0.6rem;
     }
-}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+
+    .pointgrid-3d-link {
+        font-size: 0.72rem;
+        padding: 4px 10px;
+    }
+}

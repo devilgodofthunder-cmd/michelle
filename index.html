@@ -40,9 +40,11 @@
         </a>
     </div>
 
-    <!-- GLOBAL SUBTLE AGENCY SIGNATURE (OPTION 2) -->
+    <!-- GLOBAL AGENCY SIGNATURE WITH 3D WINE HOVER -->
     <div class="global-agency-badge">
-        Crafted by <a href="https://pointgridmx.com" target="_blank">Point Grid</a>
+        <a href="https://pointgridmx.com" target="_blank" class="pointgrid-3d-link">
+            Crafted by <span>Point Grid</span>
+        </a>
     </div>
 
     <!-- MAIN PAGES / SECTIONS (SPA) -->
@@ -95,7 +97,7 @@
             </div>
         </section>
 
-        <!-- 3. MODEL (3D MEASUREMENTS + 3D PORTFOLIO) -->
+        <!-- 3. MODEL (3D MEASUREMENTS + 3D PORTFOLIO WITH VENGA LA ALEGRIA) -->
         <section id="modelo" class="tab-section">
             <div class="section-content full-width text-center">
                 <h2 class="section-headline">MODEL PORTFOLIO</h2>
@@ -124,7 +126,7 @@
                 <div class="editorial-gallery-3d">
                     <div class="gallery-card-3d">
                         <div class="card-inner">
-                            <img src="Deluxe roja .jpg" alt="Red Studio Editorial">
+                            <img src="Venga la alegria.jpg" alt="Venga la Alegría Editorial">
                         </div>
                     </div>
                     <div class="gallery-card-3d">
@@ -146,25 +148,30 @@
             </div>
         </section>
 
-        <!-- 4. MUSIC (DJ PHOTO + AUTO 30s RANDOM TRACK PLAYER) -->
+        <!-- 4. MUSIC (VIDEOCLIP BACKGROUND + AUDIO CONTROLS + FULL DJ PHOTOS) -->
         <section id="musica" class="tab-section">
             <div class="section-content text-center">
                 <h2 class="section-headline">MUSIC & DJ SET</h2>
                 <p class="section-text">Live performances and conceptual DJ sets for private events, festivals, and high-end cocktail lounges.</p>
                 
-                <!-- INTERACTIVE DJ AUDIO CONTROLLER -->
+                <!-- INTERACTIVE DJ AUDIO CONTROLLER WITH MUTED VIDEOCLIP BACKGROUND -->
                 <div class="dj-player-box">
-                    <div class="dj-status">
-                        <span class="equalizer-dot" id="eq-dot"></span>
-                        <span id="track-status-text">Ready · 30s Preview Mix</span>
-                    </div>
-                    <div class="dj-controls">
-                        <button type="button" id="audio-toggle-btn" class="btn-dj-control" onclick="toggleDjAudio()">
-                            <i class="fas fa-pause"></i> Mute / Pause
-                        </button>
-                        <button type="button" class="btn-dj-secondary" onclick="switchDjTrack()">
-                            <i class="fas fa-forward"></i> Next Track
-                        </button>
+                    <video id="dj-bg-video" class="dj-video-bg" src="videoclip.mp4" autoplay loop muted playsinline></video>
+                    <div class="dj-video-overlay"></div>
+
+                    <div class="dj-player-content">
+                        <div class="dj-status">
+                            <span class="equalizer-dot" id="eq-dot"></span>
+                            <span id="track-status-text">Ready · 30s Preview Mix</span>
+                        </div>
+                        <div class="dj-controls">
+                            <button type="button" id="audio-toggle-btn" class="btn-dj-control" onclick="toggleDjAudio()">
+                                <i class="fas fa-pause"></i> Mute / Pause
+                            </button>
+                            <button type="button" class="btn-dj-secondary" onclick="switchDjTrack()">
+                                <i class="fas fa-forward"></i> Next Track
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -172,10 +179,10 @@
                 <audio id="dj-audio-1" src="track 1.mp3" preload="metadata"></audio>
                 <audio id="dj-audio-2" src="track 2.mp3" preload="metadata"></audio>
 
-                <!-- MUSIC IMAGES GRID -->
+                <!-- FULL UNCROPPED MUSIC IMAGES GRID -->
                 <div class="music-gallery-grid">
                     <div class="music-feature-card">
-                        <img src="dj michelle.jpg" alt="DJ Michelle Calderön">
+                        <img src="dj michelle.jpg" alt="DJ Michelle Calderön Logo">
                     </div>
                     <div class="music-feature-card">
                         <img src="Banner rojo 1.jpg" alt="Musical Performance">
@@ -202,7 +209,7 @@
             </div>
         </section>
 
-        <!-- 6. CONTACT (FORM, WHATSAPP & AGENCY CREDIT OPTION 1) -->
+        <!-- 6. CONTACT -->
         <section id="contacto" class="tab-section">
             <div class="section-content form-wrapper text-center">
                 <h2 class="section-headline">CONTACT</h2>
@@ -304,7 +311,7 @@
                         snippetTimer = setTimeout(() => {
                             const nextIndex = (currentTrackIndex + 1) % tracks.length;
                             playRandom30sSnippet(nextIndex);
-                        }, 30000); // 30 seconds exact snippet
+                        }, 30000);
                     }).catch(() => {
                         updateDjUI(false, 'Tap "Play DJ Preview" to listen');
                     });
@@ -355,14 +362,21 @@
                 e.currentTarget.classList.add('active');
             }
 
-            // Exclusive Music Section Audio Trigger
+            const bgVideo = document.getElementById('dj-bg-video');
             if (sectionId === 'musica') {
                 isMusicTabActive = true;
                 userMuted = false;
-                playRandom30sSnippet(0); // Starts with Track 1
+                if (bgVideo) {
+                    bgVideo.muted = true;
+                    bgVideo.play().catch(() => {});
+                }
+                playRandom30sSnippet(0);
             } else {
                 isMusicTabActive = false;
                 stopAllDjAudio();
+                if (bgVideo) {
+                    bgVideo.pause();
+                }
             }
         }
     </script>
