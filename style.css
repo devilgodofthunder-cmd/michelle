@@ -618,7 +618,7 @@ body {
 }
 
 .music-feature-card {
-    background: #080808;
+    background: #050505;
     border: 1px solid #1f1f1f;
     padding: 14px;
     display: flex;
@@ -639,6 +639,13 @@ body {
     object-fit: contain;
     background-color: #050505;
     display: block;
+}
+
+/* Recorta las franjas grises superior e inferior de la captura del logo DJ */
+.music-feature-card:first-child img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* =========================================================
