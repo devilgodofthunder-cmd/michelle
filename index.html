@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michelle Calderön | Official Website</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -97,7 +97,7 @@
             </div>
         </section>
 
-        <!-- 3. MODEL (3D MEASUREMENTS + 3D PORTFOLIO WITH VENGA LA ALEGRIA) -->
+        <!-- 3. MODEL -->
         <section id="modelo" class="tab-section">
             <div class="section-content full-width text-center">
                 <h2 class="section-headline">MODEL PORTFOLIO</h2>
@@ -148,16 +148,18 @@
             </div>
         </section>
 
-        <!-- 4. MUSIC (VIDEOCLIP BACKGROUND + AUDIO CONTROLS + FULL DJ PHOTOS) -->
+        <!-- 4. MUSIC (UNIFIED FRAME AROUND VIDEOCLIP + TRACK CONTROLS + FULL DJ LOGO) -->
         <section id="musica" class="tab-section">
             <div class="section-content text-center">
                 <h2 class="section-headline">MUSIC & DJ SET</h2>
                 <p class="section-text">Live performances and conceptual DJ sets for private events, festivals, and high-end cocktail lounges.</p>
                 
-                <!-- INTERACTIVE DJ AUDIO CONTROLLER WITH MUTED VIDEOCLIP BACKGROUND -->
+                <!-- UNIFIED FRAME WRAPPING BOTH VIDEO AND AUDIO TRACK CONTROLS -->
                 <div class="dj-player-box">
-                    <video id="dj-bg-video" class="dj-video-bg" src="videoclip.mp4" autoplay loop muted playsinline></video>
-                    <div class="dj-video-overlay"></div>
+                    <div class="dj-video-frame">
+                        <video id="dj-bg-video" class="dj-video-bg" src="videoclip.mp4" autoplay loop muted playsinline></video>
+                        <div class="dj-video-overlay"></div>
+                    </div>
 
                     <div class="dj-player-content">
                         <div class="dj-status">
@@ -166,7 +168,7 @@
                         </div>
                         <div class="dj-controls">
                             <button type="button" id="audio-toggle-btn" class="btn-dj-control" onclick="toggleDjAudio()">
-                                <i class="fas fa-pause"></i> Mute / Pause
+                                <i class="fas fa-pause"></i> Turn Off Audio
                             </button>
                             <button type="button" class="btn-dj-secondary" onclick="switchDjTrack()">
                                 <i class="fas fa-forward"></i> Next Track
