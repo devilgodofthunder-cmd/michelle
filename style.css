@@ -66,7 +66,7 @@ body {
         0px 4px 12px rgba(128, 0, 32, 0.8);
 }
 
-/* FLOATING SOCIAL BAR (IG, TIKTOK, TELEGRAM) */
+/* FLOATING SOCIAL BAR */
 .social-bar {
     position: fixed;
     right: 25px;
@@ -74,13 +74,13 @@ body {
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 20px;
     z-index: 999;
 }
 
 .social-icon {
     color: #ffffff;
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     transition: all 0.3s ease;
     text-decoration: none;
     text-align: center;
@@ -89,6 +89,30 @@ body {
 .social-icon:hover {
     color: #800020;
     transform: scale(1.25);
+}
+
+/* GLOBAL SUBTLE AGENCY SIGNATURE (OPTION 2) */
+.global-agency-badge {
+    position: fixed;
+    bottom: 12px;
+    left: 20px;
+    z-index: 998;
+    font-size: 0.68rem;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.35);
+    pointer-events: auto;
+}
+
+.global-agency-badge a {
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.global-agency-badge a:hover {
+    color: #800020;
 }
 
 /* SPA TAB SECTIONS */
@@ -108,7 +132,7 @@ body {
     align-items: flex-start;
     justify-content: center;
     padding-top: 90px;
-    padding-bottom: 50px;
+    padding-bottom: 65px;
     overflow-y: auto;
 }
 
@@ -123,7 +147,7 @@ body {
 }
 
 /* =========================================================
-   1. HOME SECTION: FULL PROFESIONAL 6 + WHITE STYLIZED TEXT
+   1. HOME SECTION
    ========================================================= */
 #inicio {
     align-items: center;
@@ -189,7 +213,7 @@ body {
 }
 
 /* =========================================================
-   2. MICHELLE CALDERÖN SECTION (PHOTOS TOP, BIO BELOW)
+   2. MICHELLE CALDERÖN SECTION
    ========================================================= */
 .bio-layout {
     max-width: 950px;
@@ -281,7 +305,7 @@ body {
 }
 
 /* =========================================================
-   GENERAL CONTENT & 3D GALLERY
+   3. MODEL SECTION: 3D MEASUREMENTS & 3D PORTFOLIO
    ========================================================= */
 .section-content {
     max-width: 950px;
@@ -314,12 +338,77 @@ body {
     margin-bottom: 30px;
 }
 
-/* 3D INTERACTIVE GALLERY IN MODEL SECTION */
+/* 3D INTERACTIVE MEASUREMENTS BAR */
+.measurements-3d-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    max-width: 780px;
+    margin: 15px auto 35px auto;
+    perspective: 900px;
+}
+
+.measure-card-3d {
+    background: linear-gradient(145deg, #111111, #080808);
+    border: 1px solid rgba(128, 0, 32, 0.45);
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: all 0.4s cubic-bezier(0.2, 0.85, 0.25, 1);
+}
+
+.measure-label {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: #999999;
+    margin-bottom: 4px;
+    transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.measure-value {
+    font-family: 'Cinzel', serif;
+    font-size: 1.65rem;
+    font-weight: 600;
+    color: #ffffff;
+    transition: transform 0.4s ease, text-shadow 0.4s ease;
+}
+
+.measure-value small {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: #b32448;
+}
+
+.measure-card-3d:hover {
+    transform: translateZ(35px) rotateX(12deg) rotateY(-8deg) translateY(-6px);
+    background: linear-gradient(145deg, #2a040e, #0d0d0d);
+    border-color: #b32448;
+    box-shadow: 
+        0 15px 25px rgba(0, 0, 0, 0.9),
+        0 0 20px rgba(128, 0, 32, 0.65);
+}
+
+.measure-card-3d:hover .measure-label {
+    color: #ffffff;
+    transform: translateZ(15px);
+}
+
+.measure-card-3d:hover .measure-value {
+    transform: translateZ(25px);
+    text-shadow: 0 4px 12px rgba(179, 36, 72, 0.8);
+}
+
+/* 3D INTERACTIVE GALLERY */
 .editorial-gallery-3d {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 30px;
-    margin-top: 30px;
+    margin-top: 20px;
     perspective: 1000px;
 }
 
@@ -359,20 +448,131 @@ body {
     filter: brightness(1.1);
 }
 
-/* MUSIC IMAGE */
-.single-feature {
-    max-width: 650px;
+/* =========================================================
+   4. MUSIC & DJ AUDIO CONTROLLER
+   ========================================================= */
+.dj-player-box {
+    max-width: 540px;
+    margin: 0 auto 35px auto;
+    padding: 18px 24px;
+    background: linear-gradient(145deg, #110508, #0a0a0a);
+    border: 1px solid rgba(128, 0, 32, 0.55);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.75);
+}
+
+.dj-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.82rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #e0e0e0;
+}
+
+.equalizer-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: #555555;
+    display: inline-block;
+}
+
+.equalizer-dot.active {
+    background-color: #ff1e56;
+    box-shadow: 0 0 10px #ff1e56;
+    animation: pulseBeat 0.8s infinite alternate;
+}
+
+@keyframes pulseBeat {
+    from { transform: scale(0.85); opacity: 0.7; }
+    to { transform: scale(1.3); opacity: 1; }
+}
+
+.dj-controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-dj-control {
+    padding: 10px 22px;
+    background: #800020;
+    border: 1px solid #b32448;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-dj-control:hover {
+    background: #a30029;
+    box-shadow: 0 0 15px rgba(179, 36, 72, 0.6);
+}
+
+.btn-dj-secondary {
+    padding: 10px 18px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #cccccc;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-dj-secondary:hover {
+    border-color: #800020;
+    color: #ffffff;
+}
+
+.music-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
-.feature-img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border: 1px solid #222;
+.music-feature-card {
+    background: #0d0d0d;
+    border: 1px solid #1f1f1f;
+    padding: 12px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-/* CONTACT FORM & WHATSAPP BUTTON */
+.music-feature-card:hover {
+    transform: translateY(-5px);
+    border-color: #800020;
+}
+
+.music-feature-card img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+}
+
+/* =========================================================
+   6. CONTACT FORM, WHATSAPP & AGENCY CREDITS (OPTION 1)
+   ========================================================= */
 .form-wrapper {
     max-width: 550px;
 }
@@ -444,44 +644,159 @@ body {
     box-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
 }
 
-.copyright {
-    color: #444444;
-    font-size: 0.8rem;
-    margin-top: 30px;
+.footer-credits {
+    margin-top: 35px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 18px;
 }
 
-/* MOBILE RESPONSIVE */
+.copyright {
+    color: #555555;
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+}
+
+.agency-credit {
+    color: #666666;
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.agency-credit a {
+    color: #999999;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.agency-credit a:hover {
+    color: #800020;
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE ADJUSTMENTS (SMARTPHONES)
+   ========================================================= */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 12px 8px;
+    }
+
     .nav-links {
-        gap: 10px;
+        gap: 8px 14px;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     .nav-item-3d {
-        font-size: 0.65rem;
+        font-size: 0.68rem;
+        letter-spacing: 1.2px;
+    }
+
+    .tab-section {
+        padding-top: 85px;
+        padding-bottom: 85px;
+    }
+
+    /* Hero framing for vertical phone screens */
+    #inicio {
+        padding-top: 75px;
+    }
+
+    .hero-photo-wrapper {
+        top: 75px;
+        height: calc(100vh - 135px);
+    }
+
+    .hero-full-photo {
+        object-fit: cover;
+        object-position: center 15%;
+    }
+
+    .hero-content {
+        margin-top: 38vh;
     }
 
     .brand-title {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
         letter-spacing: 4px;
     }
 
     .brand-subtitle {
-        font-size: 0.7rem;
+        font-size: 0.68rem;
         letter-spacing: 2px;
     }
 
+    /* Better photo aspect ratios on smartphones */
+    .bio-grid,
+    .music-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .bio-card img,
+    .music-feature-card img {
+        height: auto;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        object-position: top center;
+    }
+
+    .measurements-3d-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .measure-value {
+        font-size: 1.35rem;
+    }
+
+    .editorial-gallery-3d {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .gallery-card-3d {
+        height: auto;
+        aspect-ratio: 3 / 4;
+    }
+
     .bio-text-container {
-        padding: 25px 20px;
+        padding: 24px 18px;
     }
 
     .bio-main-title {
-        font-size: 1.8rem;
+        font-size: 1.75rem;
     }
 
-    .social-bar {
-        right: 12px;
-        gap: 16px;
+    .section-headline {
+        font-size: 1.9rem;
     }
-}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+
+    /* Bottom horizontal social bar so it never overlaps photos on phones */
+    .social-bar {
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: 12px;
+        transform: translateX(-50%);
+        flex-direction: row;
+        background: rgba(10, 10, 10, 0.92);
+        border: 1px solid rgba(128, 0, 32, 0.45);
+        padding: 8px 20px;
+        border-radius: 30px;
+        gap: 22px;
+    }
+
+    .social-icon {
+        font-size: 1.1rem;
+    }
+
+    .global-agency-badge {
+        bottom: 52px;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        font-size: 0.6rem;
+    }
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
